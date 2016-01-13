@@ -1,0 +1,59 @@
+.ft-navbar {
+  background-color: black !important;
+  min-height: 80px !important;
+  margin-bottom: 0px !important;
+  border-color: transparent !important;
+}
+.ft-nav {
+  .logo {
+    max-width: 150%;
+    max-height: 150%;
+    display: inline;
+  }
+}
+.ft-nba {
+  color: #ffb300 !important;
+  font-style: italic;
+  font-weight: bold;
+  min-height: 65px;
+}
+.twitter-box {
+  margin-top: 10px;
+}
+.twitter-header {
+  height: 25px;
+  clear: both;
+  background: transparent url("http://a2.espncdn.com/prod/assets/module_header_gradient.gif") repeat-x scroll 0px 0px;
+  h5 {
+    img {
+      margin: 6px;
+    }
+    a {
+      color: white;
+    }
+  }
+}
+.twitter-feed-container {
+  background: #FFF url("http://a2.espncdn.com/prod/assets/gradient_back.jpg") repeat-x scroll center bottom;
+  border-width: 0px 1px;
+  border-color: #C2C2C2;
+  border-style: solid;
+}
+.twitter-feed {
+  padding: 10px;
+  :nth-child(even){
+    background-color: #E9E9E9;
+  }
+  border: 1px solid #C2C2C2;
+  height: 245px !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+  li {
+    padding: 5px;
+    box-shadow: 6px 0px 10px -10px #696C5C inset, 6px 0px 10px -10px #696C5C inset;
+    border-width: 0px 1px;
+    border-color: #C2C2C2;
+    border-style: solid;
+  }
+}
