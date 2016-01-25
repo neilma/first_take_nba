@@ -4,10 +4,10 @@ angular.module('first_take_nba').controller('HeadLinesCtrl', function ($scope, $
   // Create a function as we will reuse this code
   function refresh() {
     $http({
-        url: 'http://sports.espn.go.com/espn/rss/nba/news',
+        url: XmlService.endpoints.headlines,
         method: "GET"
     }).success(function (data) {
-      $scope.headlines = XmlService.headlines(data);
+      $scope.headlines = XmlService.xml2json(data).rss.channel.item;
     }).error(function (data) {
       console.log('Error');
     });
@@ -17,6 +17,6 @@ angular.module('first_take_nba').controller('HeadLinesCtrl', function ($scope, $
     //    refresh();
     //}, $scope.refreshInterval * 1000);
   $scope.getHeadLineLink = function(headline) {
-    return $sce.trustAsHtml("<a class=\"list-group-item\" href=\"" + headline.link + "\">" + headline.title + "</a>");
+    return $sce.trustAsHtml("<a target=\"_blank\" class=\"list-group-item\" href=\"" + headline.link + "\">" + headline.title + "</a>");
   }
 });
