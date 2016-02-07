@@ -1,4 +1,4 @@
-first_take_nba = angular.module('first_take_nba',[])
+first_take_nba = angular.module('first_take_nba',['ngAnimate'])
 .service('XmlService', function(){
   this.xml2json = function(xmlStr) {
     var x2js = new X2JS();

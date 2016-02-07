@@ -1,6 +1,6 @@
-.row{ style: "overflow-x:scroll" }
+.row
   .col-md-2.col-sm-2
-  .btn-group.col-md-8.col-sm-8
+  .btn-group.col-md-8.col-sm-8.scorebox
     - @scorebox.each do |score|
       = button_tag(score.html_safe, { class: "btn btn-default", style: "text-align: left" })
   .col-md-2.col-sm-2

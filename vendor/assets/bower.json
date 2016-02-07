@@ -3,6 +3,7 @@
   "dependencies": {
     "angular": "latest",
     "bootstrap-sass-official": "latest",
-    "x2js": "latest"
+    "x2js": "latest",
+    "angular-animate": "latest"
   }
 }

@@ -4,12 +4,11 @@
     = render "scorebox"
   .row
     .col-md-2.col-sm-2
-    .col-md-8.col-sm-8
-      .row
-        = render "carousel"
+      = render "side_menu"
+    .col-md-8.col-sm-8{style: "text-align: center"}
+      = render "carousel"
       -#.view-frame.animate-view{ "ng-view" => "" }
-      .row
-        = render "headlines"
-        .col-md-4.col-sm-4.twitter-box
-          = render "twitter/twitter_box"
+      = render "headlines"
+      .col-md-4.col-sm-4.twitter-box
+        = render "twitter/twitter_box"
     .col-md-2.col-sm-2

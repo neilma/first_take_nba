@@ -1,0 +1,14 @@
+.custom-nav-sidebar
+  .list-group.nav.navbar-nav.custom-fade{ "ng-show" => "expand" }
+    = link_to(content_tag(:i, "", class: "fa fa-home fa-fw") + "Home", "/")
+    = link_to(content_tag(:i, "", class: "fa fa-users fa-fw") + "Guests", "/")
+    = link_to(content_tag(:i, "", class: "fa fa-info fa-fw") + "About", "/")
+  -#%ul.nav.navbar-nav.custom-fade{ "ng-show" => "expand" }
+  -#  %li
+  -#    = link_to("Home", "/", class: "fa fa-home fa-fw")
+  -#  %li
+  -#    = link_to("Guests", "/guests", class: "fa fa-users fa-fw")
+  -#  %li
+  -#    = link_to("About", "/about", class: "fa fa-info fa-fw")
+  = button_tag(content_tag(:i, "", class: "fa fa-navicon fa-fw"), "ng-click" => "expand=!expand", class: "sidebar-hamburger")
+  -#= button_tag("More", { "ng-click" => "expand=!expand", class: "sidebar-arrow"})

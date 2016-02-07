@@ -53,4 +53,4 @@ gem 'haml-rails'
 
 gem 'twitter'
 gem 'dotenv-rails'
-
+gem 'font-awesome-rails'

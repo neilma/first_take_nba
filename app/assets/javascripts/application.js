@@ -15,4 +15,5 @@
 //= require angular/angular
 //= require bootstrap-sprockets
 //= require x2js/xml2json
+//= require angular-animate/angular-animate
 //= require_tree .

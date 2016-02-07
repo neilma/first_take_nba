@@ -6,8 +6,8 @@
 }
 .ft-nav {
   .logo {
-    max-width: 150%;
-    max-height: 150%;
+    width: 100px;
+    height: 50px;
     display: inline;
   }
 }
@@ -18,7 +18,6 @@
   min-height: 65px;
 }
 .twitter-box {
-  margin-top: 10px;
 }
 .twitter-header {
   height: 25px;
@@ -56,4 +55,100 @@
     border-color: #C2C2C2;
     border-style: solid;
   }
+}
+
+.scorebox {
+  text-align: center;
+  min-height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-top: 5px;
+  button {
+    float: none !important;
+  }
+}
+
+.custom-nav-sidebar {
+  position: fixed;
+  span {
+    font-weight: bold;
+  }
+  a {
+    box-shadow: 10px 10px 5px #888888;
+    background-color: #ffb300;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 2px solid #ffb300;
+    font-weight: bold;
+    color: #000000 !important;
+    float: left;
+    width: 80px;
+  }
+  a:hover {
+    background-color: transparent !important;
+  }
+}
+
+.custom-embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.custom-embed-container iframe,
+.custom-embed-container object,
+.custom-embed-container embed {
+  position: absolute;
+  top: 0; left: 0;
+//  width: 100%;
+//  height: 100%;
+}
+
+.custom-carousel-container {
+  margin: auto;
+  border: 5px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.custom-fade.ng-hide {
+  opacity: 0;
+  transition:0.2s linear all;
+  transform:translateX(-100px);
+}
+
+.custom-fade {
+  transition:0.2s linear all;
+  transform:translateX(0);
+  padding-left: 10px !important;
+  width: 90px;
+}
+
+.sidebar-hamburger {
+  margin-left: 10px;
+  margin-top: 50px;
+  background-color: #ffb300;
+  border: medium none !important;
+  border-radius: 5px;
+}
+
+.sidebar-arrow {
+  background-color: #ffb300;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 2px solid #ffb300;
+  transform-origin: 0% 140%;
+  transform: rotate(90deg) !important;
+  font-weight: bold;
+  padding: 3px;
+  width: 50px;
 }
