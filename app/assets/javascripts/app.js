@@ -4,7 +4,7 @@ first_take_nba = angular.module('first_take_nba',['ngAnimate'])
     var x2js = new X2JS();
     return x2js.xml_str2json(xmlStr);
   };
- this.endpoints = { 'headlines' : 'http://sports.espn.go.com/espn/rss/nba/news' };
+ this.endpoints = { 'headlines' : 'https://sports.espn.go.com/espn/rss/nba/news' };
 })
 .filter('to_trusted', ['$sce', function($sce){
   return function(text) {
