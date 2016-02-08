@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   end
 
   def headline_vid
-    require 'net/https'
     url = "https://www.googleapis.com/youtube/v3/search?key=#{ENV['YOUTUBE_KEY']}&q=first+take+nba&part=snippet&order=date&maxResults=3"
     resp = Net::HTTP.start(URI(url).host, URI(url).port, use_ssl:true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
       http.request(Net::HTTP::Get.new(URI(url)))
