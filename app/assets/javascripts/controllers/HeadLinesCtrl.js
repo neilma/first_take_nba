@@ -1,4 +1,4 @@
-angular.module('first_take_nba').controller('HeadLinesCtrl', function ($scope, $http, $interval, XmlService, $sce) {
+angular.module('first_take_nba').controller('HeadLinesCtrl', ["$scope", "$http", "$interval", "XmlService", "$sce", function ($scope, $http, $interval, XmlService, $sce) {
   $scope.refreshInterval = 5; // For every 5 sec
 
   // Create a function as we will reuse this code
@@ -19,4 +19,4 @@ angular.module('first_take_nba').controller('HeadLinesCtrl', function ($scope, $
   $scope.getHeadLineLink = function(headline) {
     return $sce.trustAsHtml("<a target=\"_blank\" class=\"list-group-item\" href=\"" + headline.link + "\">" + headline.title + "</a>");
   }
-});
+}]);

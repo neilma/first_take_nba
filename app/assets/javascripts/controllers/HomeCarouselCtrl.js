@@ -1,4 +1,4 @@
-angular.module('first_take_nba').controller('HomeCarouselCtrl', function ($scope, $sce, $http) {
+angular.module('first_take_nba').controller('HomeCarouselCtrl', ["$scope", "$sce", "$http", function ($scope, $sce, $http) {
     function embedVidHtml(vidId) {
         return $sce.trustAsHtml('<iframe width="640px" height="350px" src="https://www.youtube.com/embed/' + vidId + '"></iframe>');
     }
@@ -33,4 +33,4 @@ angular.module('first_take_nba').controller('HomeCarouselCtrl', function ($scope
     //}
     //console.log(carouselVidIds);
     //$scope.carouselVidIds = carouselVidIds;
-});
+}]);
