@@ -4,10 +4,10 @@ angular.module('first_take_nba').controller('HeadLinesCtrl', ["$scope", "$http",
   // Create a function as we will reuse this code
   function refresh() {
     $http({
-        url: XmlService.endpoints.headlines,
+        url: '/news.json',
         method: "GET"
     }).success(function (data) {
-      $scope.headlines = XmlService.xml2json(data).rss.channel.item;
+      $scope.headlines = data.news;
     }).error(function (data) {
       console.log('Error');
     });
@@ -17,6 +17,7 @@ angular.module('first_take_nba').controller('HeadLinesCtrl', ["$scope", "$http",
     //    refresh();
     //}, $scope.refreshInterval * 1000);
   $scope.getHeadLineLink = function(headline) {
+      console.log(headline);
     return $sce.trustAsHtml("<a target=\"_blank\" class=\"list-group-item\" href=\"" + headline.link + "\">" + headline.title + "</a>");
   }
 }]);

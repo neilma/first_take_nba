@@ -33,9 +33,22 @@ class HomeController < ApplicationController
     end
   end
 
+  def news
+    resp = Net::HTTP.get(URI(JSON.parse(File.read("#{Rails.root}/config/ws.json"))["headlines"]))
+    respond_to do |format|
+      format.json { render json: { news: get_headlines(resp) }.to_json.tap{|i| puts i} }
+    end
+  end
+
   private
+
+  def get_headlines(resp)
+    Rails.logger.info resp if Rails.env == :production
+    Nokogiri::XML(resp).css('rss channel item').inject([]){ |memo, obj| memo << { title: obj.css('title').text, link: obj.css('link').text } }
+  end
+
   def get_vid_ids(resp)
-    Rails.logger.info resp.body
+    Rails.logger.info resp if Rails.env == :production
     Array.wrap(JSON.parse(resp.body)['items']).inject([]){ |memo, obj| memo << obj['id']['videoId'] }
   end
 end
