@@ -35,6 +35,7 @@ class HomeController < ApplicationController
 
   private
   def get_vid_ids(resp)
+    Rails.logger.info resp.body
     Array.wrap(JSON.parse(resp.body)['items']).inject([]){ |memo, obj| memo << obj['id']['videoId'] }
   end
 end
