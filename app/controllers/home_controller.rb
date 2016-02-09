@@ -5,12 +5,13 @@ class HomeController < ApplicationController
 
   def headline_vid
     url = "https://www.googleapis.com/youtube/v3/search?key=#{ENV['YOUTUBE_KEY']}&q=first+take+nba&part=snippet&order=date&maxResults=3"
-    resp = Net::HTTP.start(URI(url).host, URI(url).port, use_ssl:true, ca_file: 'usr/lib/ssl/certs/ca-certificates.crt') do |http|
+    # resp = Net::HTTP.start(URI(url).host, URI(url).port, use_ssl: true, ca_file: Rails.root.join("lib/ca-bundle.crt").to_s) do |http|
+        resp = Net::HTTP.start(URI(url).host, URI(url).port, use_ssl:true, ca_file: 'usr/lib/ssl/certs/ca-certificates.crt') do |http|
       # resp = Net::HTTP.start(URI(url).host, URI(url).port, use_ssl:true, verify_mode: OpenSSL::SSL::VERIFY_NONE) do |http|
       http.request(Net::HTTP::Get.new(URI(url)))
     end
     respond_to do |format|
-      format.html { render json: { vid_ids: get_vid_ids(resp) }.to_json.tap{|i| puts i} }
+      format.json { render json: { vid_ids: get_vid_ids(resp) }.to_json.tap{|i| puts i} }
     end
   end
 

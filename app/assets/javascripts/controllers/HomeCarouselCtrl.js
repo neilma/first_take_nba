@@ -6,7 +6,7 @@ angular.module('first_take_nba').controller('HomeCarouselCtrl', ["$scope", "$sce
     var getVids = function() {
         $http({
             //url: 'https://www.googleapis.com/youtube/v3/search?key=' + process.env.YOUTUBE_KEY + '&channelId=' +  + '&part=snippet&order=date&maxResults=3',
-            url: '/headline_vid',
+            url: '/headline_vid.json',
             method: 'GET'
         }).success(function(data){
             console.log(typeof(data.vid_ids));
