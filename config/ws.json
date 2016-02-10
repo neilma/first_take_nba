@@ -1,4 +1,4 @@
 {
-  "scorebox": "http://sports.espn.go.com/nba/bottomline/scores",
-  "headlines": "http://sports.espn.go.com/espn/rss/nba/news"
+  "scorebox": "http://espn.go.com/nba/bottomline/scores",
+  "headlines": "http://espn.go.com/espn/rss/nba/news"
 }
